@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-card *ngFor="let complejo of dato">
+      <ion-item>
+         <h2>{{ complejo.title}}</h2>
+
+         <ion-item *ngFor="let actores of complejo.characters">
+            <ion-item (click)="presentActionSheet(actores)">
+              <h3>{{actores}}</h3>
+            </ion-item>
+              
+         </ion-item>
+  
+      </ion-item>
+ 
+      
+    </ion-card>
+  </ion-list>
+</ion-content>
