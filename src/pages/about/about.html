@@ -1,13 +1,30 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+        Starships
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+   
+        <ion-card *ngFor="let item of dato">
+          <ion-item>
+              <h2><b>{{ item.name}}</b></h2>
+              <br>
+              <h3>{{item.model}}</h3>
+              <h3>ManuFacture:{{ item.manufacturer}}</h3>
+              <h3>Cost in Credits:{{ item.cost_in_credits}}</h3>
+              <h3>Length:{{ item.length}}</h3>
+          </ion-item>
+             
+    
+           
+        
+     
+          
+        </ion-card>
+    
     
 
 </ion-content>

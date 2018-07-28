@@ -29,7 +29,7 @@ url=URL_SERVICIOS
               
                });
 
-    let array = this.dato;
+    
     
   }
   getPerson(id): any {
@@ -39,7 +39,7 @@ url=URL_SERVICIOS
 
   presentActionSheet(actores)
   {
-    let endpoint = 'people/' + actores + '/';
+    
     return this.http.get(actores) .subscribe( resp=>{
       let data = resp.json();
       this.datos = data;

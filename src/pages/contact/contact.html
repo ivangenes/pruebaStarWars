@@ -1,17 +1,21 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Contact
+     Vehicles
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
-  </ion-list>
+    <ion-card *ngFor="let item of dato">
+        <ion-item>
+            <h2><b>{{ item.name}}</b></h2>
+            <br>
+            <h3>Model: {{ item.model}}</h3>
+            <h3>ManuFacture:{{ item.manufacturer}}</h3>
+            <h3>Cost in Credits:{{ item.cost_in_credits}}</h3>
+            <h3>Length:{{ item.length}}</h3>
+        </ion-item>
+    </ion-card>
+  
 </ion-content>

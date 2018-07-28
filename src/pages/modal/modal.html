@@ -31,13 +31,14 @@
                 <h3>Rotation Period: {{homeWo.rotation_period}}</h3>
 
             </ion-item>
-            <ion-item>
-                <h2  align = "center" >Films</h2>
-                <h3> {{actores.films}}</h3>
+            <h2>Films</h2>
+           <ion-item *ngFor="let item of actores.films"> 
+               
+                <h3>Titulo: {{item}}</h3>
 
             </ion-item>
             
-            <h2>Species: {{actores.species}}</h2>
+            <h2>Species: {{especiess.name}}</h2>
             
 
          </ion-card-content>

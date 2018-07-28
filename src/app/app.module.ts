@@ -14,6 +14,9 @@ import { FilmsServiceProvider } from '../providers/films-service/films-service';
 import { StarshipsServiceProvider } from '../providers/starships-service/starships-service';
 import { VehiclesServiceProvider } from '../providers/vehicles-service/vehicles-service';
 import { ModalPage } from '../pages/modal/modal';
+//plugins para push notifi
+import { OneSignal } from '@ionic-native/onesignal';
+import { PushnotificationProvider } from '../providers/pushnotification/pushnotification';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,9 @@ import { ModalPage } from '../pages/modal/modal';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     FilmsServiceProvider,
     StarshipsServiceProvider,
-    VehiclesServiceProvider
+    VehiclesServiceProvider,
+    OneSignal,
+    PushnotificationProvider
   ]
 })
 export class AppModule {}

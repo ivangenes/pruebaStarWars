@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import {URL_SERVICIOS} from '../../url.servicios';
 
 
 /*
@@ -13,6 +14,14 @@ export class StarshipsServiceProvider {
 
   constructor(public http: Http) {
     console.log('Hello StarshipsServiceProvider Provider');
+    this.traerstarships();
   }
+
+  traerstarships()
+  {
+    let url = URL_SERVICIOS + 'starships/';
+    return this.http.get(url);
+  }
+
 
 }
