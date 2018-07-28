@@ -13,9 +13,11 @@ import { ModalPage } from '../modal/modal';
 export class HomePage {
 dato:any;
 datos:any;
+person:any;
 url=URL_SERVICIOS
   constructor(public navCtrl: NavController, public filmsService:FilmsServiceProvider,public http: Http, public modalCtrl:ModalController) {
     this.traerFilms();
+
   }
 
   traerFilms()
@@ -25,21 +27,21 @@ url=URL_SERVICIOS
                  let data = resp.json();
                  this.dato = data.results;
                  console.log(this.dato);
-
-              
-               });
-
-    
-    
+               }); 
+   
   }
   getPerson(id): any {
-    let endpoint = 'people/' + id + '/';
-    return this.http.get(this.url + endpoint);
+    //let endpoint = 'people/' + id + '/';
+   this.http.get(id).subscribe( resp=>{
+      let data = resp.json();
+      this.person = data.name;
+     // console.log(this.person);
+      return this.person
+    });
   }
 
   presentActionSheet(actores)
   {
-    
     return this.http.get(actores) .subscribe( resp=>{
       let data = resp.json();
       this.datos = data;
@@ -48,6 +50,5 @@ url=URL_SERVICIOS
       modal.present();
    
     });
-  
   }
 }

@@ -17,7 +17,10 @@ export class FilmsServiceProvider {
     return this.http.get(url);
     
   }
-
+  traerPersonas()
+  {
+    
+  }
 
 
 }

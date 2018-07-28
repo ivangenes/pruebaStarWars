@@ -16,7 +16,7 @@ export class ModalPage {
     this.actores = this.navParams.get('actor');
     console.log(this.actores);
     this.homeword(this.actores.homeworld);
-    this.films(this.actores.films);
+    //this.films(this.actores.films);
     this.species(this.actores.species);
   }
 

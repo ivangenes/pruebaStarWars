@@ -9,14 +9,14 @@
   <ion-navbar>
     <ion-title>Datos del Actor</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
-       <ion-card>
-         <ion-card-title align="center">{{actores.name}}</ion-card-title>
+    <ion-card>
+         <ion-card-title align="center"><b>{{actores.name}}</b></ion-card-title>
          <ion-card-content>
+           <ion-item>
             <h2>Heigth: {{actores.height}}</h2>
             <h2>Mass: {{actores.mass}}</h2>
             <h2>Hair Color: {{actores.hair_color}}</h2>
@@ -24,24 +24,24 @@
             <h2>Eye Color: {{actores.eye_color}}</h2>
             <h2>Birth Year: {{actores.birth_year}}</h2>
             <h2>Gender: {{actores.gender}}</h2>
+          </ion-item>
+          <ion-item><h2><b>Species:</b> {{especiess.name}}</h2></ion-item>
             <ion-item>
-                <h2 align = "center">Homeworld</h2>
+                <h2><b>Homeworld</b></h2>
                 <h3>Name: {{homeWo.name}}</h3>
                 <h3>Orbital Period: {{homeWo.orbital_period}}</h3>
                 <h3>Rotation Period: {{homeWo.rotation_period}}</h3>
-
             </ion-item>
-            <h2>Films</h2>
-           <ion-item *ngFor="let item of actores.films"> 
-               
-                <h3>Titulo: {{item}}</h3>
-
+            <ion-item>
+                  <h2><b>Films</b></h2>
+                  <ion-item *ngFor="let item of actores.films"> 
+                      <h3>Titulo: {{item}}</h3>
+                  </ion-item>
             </ion-item>
             
-            <h2>Species: {{especiess.name}}</h2>
             
 
-         </ion-card-content>
-       </ion-card>
+          </ion-card-content>
+    </ion-card>
 
 </ion-content>

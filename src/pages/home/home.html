@@ -6,20 +6,25 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-card *ngFor="let complejo of dato">
-      <ion-item>
-         <h2><b>{{ complejo.title}}</b></h2>
-
-         <ion-item *ngFor="let actores of complejo.characters">
-            <ion-item (click)="presentActionSheet(actores)">
-              <h3>{{actores}}</h3>
-            </ion-item>
-              
-         </ion-item>
+    <ion-card *ngFor="let item of dato">
+      <ion-list>
+        <br>
+          <ion-card-title align="center"><b>{{ item.title}}</b></ion-card-title>
+       
+         
+                <ion-item *ngFor="let actores of item.characters">
+                   <ion-item (click)="presentActionSheet(actores)">
+                     
+                         <h3>Actor: {{actores}}</h3>
+                         <!-- person: {{getPerson(actores)}} devuelve los nombres pero al ser una consulta al servidor por cada actor
+                         tarda demasiado en cargar de tantas consultas
+                         nombre:{{person}} -->
+                     </ion-item>
   
-      </ion-item>
- 
-      
+                </ion-item>
+           
+          
+        </ion-list>
     </ion-card>
   </ion-list>
 </ion-content>
